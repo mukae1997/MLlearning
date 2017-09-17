@@ -27,8 +27,8 @@ n = size(U,1);
 U_reduce = U(:, 1:K);
 for i = 1:m;
   %for each example
-  X_rec(i,:) = (U_reduce * Z(i, :)')';
-  
+  %VERSION 2: X_rec(i,:) = (U_reduce * Z(i, :)')';
+  X_rec(i,:)=Z(i, :)*U_reduce';
 endfor
 
 
